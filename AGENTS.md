@@ -169,7 +169,7 @@ content.config.ts / nuxt.config.ts    # 内容集合定义 / 站点配置
 ## 字体与图标
 
 - 字体**自包含，构建期灌注**，**仓库不保留任何字体文件，也不走 CDN**：
-  - HarmonyOS Sans SC（`harmonyos-sans-sc-webfont-splitted` 的 `Regular` / `Medium` / `Bold` 三个 unicode-range 分片）—— 正文与 UI。`nuxi generate` **之后**由 `scripts/sync-fonts.mjs` 把三档 CSS 与分片平铺复制进 `.output/public/fonts/`，并生成 `fonts/harmonyos.css`（`nuxt.config.ts` 的 `app.head` 只引用这一个本地路径）；
+  - HarmonyOS Sans SC（`harmonyos-sans-sc-webfont-splitted` 的 `Regular` / `Medium` / `Semibold` / `Bold` 四个 unicode-range 分片）—— 正文与 UI。`nuxi generate` **之后**由 `scripts/sync-fonts.mjs` 把四档 CSS 与分片平铺复制进 `.output/public/fonts/`，并生成 `fonts/harmonyos.css`（`nuxt.config.ts` 的 `app.head` 只引用这一个本地路径）；
   - Cascadia Code（`@fontsource/cascadia-code`）—— 代码块等宽英文字体，在 `main.css` 里 `@import '@fontsource/cascadia-code/400.css'` / `700.css`，由 Vite 打包。
 - **MiSans 已彻底移除**：不要再把它加回回退链或引入同名包，正文栈以 `--font-ui` 为准。
 - **字体栈是既有决定**：`base.css` 的 `--font-ui` / `--font-code`、`scripts/sync-fonts.mjs` 的字重列表、`main.css` 的 fontsource 导入是一组，改字体要一起动；不要在 `nuxt.config.ts` 里重新加回 `cdn.jsdelivr.net` 的字体 `<link>`。
