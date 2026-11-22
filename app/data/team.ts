@@ -35,7 +35,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: '嘎达皮蛋',
     role: '维护、制作、测试镜像',
-    avatar: 'https://img.remit.ee/i/dTigJwxB3nNL',
+    avatar: 'https://img.remit.ee/i/A1R87mzheD1e',
     bilibiliSpaceLink: 'https://space.bilibili.com/3493144343612119',
   },
   {
@@ -47,7 +47,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: '冒泡の狼小蓝',
     role: '测试镜像',
-    avatar: 'https://img.remit.ee/i/ha3lcBWBpym0',
+    avatar: 'https://img.remit.ee/i/UUm42YMHjuTX',
     bilibiliSpaceLink: 'https://space.bilibili.com/1521328433',
   },
   { name: 'DFZX-XSX', role: '测试镜像', avatar: 'https://img.remit.ee/i/EOlVuVdJ060K' },

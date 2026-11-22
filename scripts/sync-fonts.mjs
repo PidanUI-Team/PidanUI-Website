@@ -20,7 +20,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const PKG = 'harmonyos-sans-sc-webfont-splitted';
-const WEIGHTS = ['Regular', 'Medium', 'SemiBold', 'Bold'];
+const WEIGHTS = ['Regular', 'Medium', 'Semibold', 'Bold'];
 
 const require = createRequire(import.meta.url);
 const distDir = dirname(require.resolve(PKG));
