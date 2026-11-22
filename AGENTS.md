@@ -47,7 +47,6 @@
 pnpm dev                       # 本地开发（默认 http://localhost:3000）
 pnpm build                     # 生产构建 = nuxi generate + + 生成 sitemap.xml + 字体灌注，产物在 .output/public
 pnpm preview                   # wrangler dev：按 Cloudflare 的规则跑同一份产物
-pnpm preview:static            # 纯静态服务器（不带 Cloudflare 行为，备用）
 pnpm deploy                    # pnpm build + wrangler deploy
 pnpm exec nuxt prepare         # 生成 .nuxt 类型与别名（改 nuxt.config 后手动跑一次）
 pnpm lint                      # ESLint：找「可能出错的地方」
@@ -200,7 +199,7 @@ content.config.ts / nuxt.config.ts    # 内容集合定义 / 站点配置
 - `@nuxt/content` 用 Node 内置的 `node:sqlite`（`experimental.sqliteConnector: 'native'`），**不需要 `better-sqlite3`**，也没有对应的 `allowBuilds` 条目；Node 22 会打一条 `ExperimentalWarning`，属正常。
 - 改了 `nuxt.config.ts` 里影响类型 / 别名的配置后跑一次 `pnpm exec nuxt prepare`，否则编辑器会报找不到自动导入。
 - 服务端路由里查询内容库必须 `queryCollection(event, 'posts')`（带 event）；文件名不要写 `[slug].json.ts` 这种「参数 + 点后缀」组合，Nitro 会把后缀并进参数——需要 JSON 后缀时用 `<dir>/index.json.ts`。
-- `nuxt preview` 不可用（静态预设没有 server 产物）：本地验收产物请用 `pnpm preview`（`wrangler dev`，与 Cloudflare 行为一致）或 `pnpm preview:static`（纯静态服务器）。
+- `nuxt preview` 不可用（静态预设没有 server 产物）：本地验收产物请用 `pnpm preview`（`wrangler dev`，与 Cloudflare 行为一致）。
 
 ## Git 与协作（外部贡献者）
 
